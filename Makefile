@@ -23,4 +23,8 @@ clone_dependencies:
 test: clone_dependencies
 	$(call run)
 
+.PHONY: rustfmt
+rustfmt: clone_dependencies
+	$(call run,$@)
+
 # vim:noexpandtab

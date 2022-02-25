@@ -11,6 +11,16 @@
 local default_config = {
   disables = {},
   formatters = {
+    rustfmt = {
+      command = 'rustfmt',
+      args = {
+        '--emit',
+        'stdout',
+      },
+      filetypes = {
+        'rust',
+      },
+    },
   },
 }
 
