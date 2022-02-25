@@ -3,7 +3,9 @@ local diff = require('diffmt/diff')
 
 local M = {}
 
-M.diff = diff.diff
+function M.diff()
+  diff.diff(function () end)
+end
 
 ---@param user_config DiffmtConfig
 function M.setup(user_config)

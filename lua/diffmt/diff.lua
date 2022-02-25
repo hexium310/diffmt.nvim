@@ -39,7 +39,7 @@ local function ft_to_formatter_name(filetype)
   return nil
 end
 
-function M.diff()
+function M.diff(callback)
   local filetype = vim.bo.filetype
   local formatter_name = ft_to_formatter_name(filetype)
   local disabled = vim.tbl_contains(config.get().disables, formatter_name)
@@ -70,6 +70,7 @@ function M.diff()
       stdout:close()
       stderr:close()
       handle:close()
+      callback()
     end
   )
 
