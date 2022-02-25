@@ -21,7 +21,7 @@ local function open_diff_win(data)
   vim.bo.bufhidden = 'wipe'
   vim.cmd(([[
     diffthis
-    file rustfmt://%s
+    file diffmt://%s
   ]]):format(filename))
 
   return buf
