@@ -8,7 +8,7 @@ describe("diffmt.diff to rust", function ()
   describe("with default config", function ()
     before_each(function ()
       vim.cmd(([[
-        only
+        silent only
         bufdo bwipeout
         edit %s
       ]]):format(file))

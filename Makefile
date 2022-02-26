@@ -18,7 +18,6 @@ clone_dependencies:
 		git clone --quiet $(plenary) $(plenary_root); \
 	fi
 
-
 .PHONY: test
 test: clone_dependencies
 	$(call run)
