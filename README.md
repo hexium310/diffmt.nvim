@@ -44,7 +44,7 @@ require('diffmt').setup({
     rustfmt = {
       -- Name or path for an executable command
       command = 'rustfmt',
-      -- Command arguments. Specify arguments to emit all content in the file to the standard output after formatted
+      -- Command arguments. Specify arguments to read the content from standart input and emit all content in the file to the standard output after formatted
       args = {
         '--emit',
         'stdout',
