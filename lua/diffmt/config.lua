@@ -2,12 +2,12 @@
 ---@class DiffmtFormatterConfig
 ---@field command string @Name or path for an executable command.
 ---@field args string[] | nil @Command arguments.
----@field filetypes string[] @Filetypes in which the command is executed.
+---@field filetypes string[] @Filetypes in which the command will be executed.
 
 ---Plugin configuration
 ---@class DiffmtConfig
 ---@field disables string[] @Commands you dont't want to execute.
----@field formatters table<string, DiffmtFormatterConfig> @Pairs of command and formatter configuration
+---@field formatters table<string, DiffmtFormatterConfig> @Pairs of command and formatter configuration.
 local default_config = {
   disables = {},
   formatters = {
