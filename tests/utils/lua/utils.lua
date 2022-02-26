@@ -1,8 +1,8 @@
 local M = {}
 
-function M.get_target_file_path()
+function M.get_target_file_path(filename)
   local dir = require('plenary/path'):new(debug.getinfo(2, 'S').source:sub(2)):parent():absolute()
-  local file = dir .. '/main.rs'
+  local file = ('%s/%s'):format(dir, filename)
 
   return file
 end

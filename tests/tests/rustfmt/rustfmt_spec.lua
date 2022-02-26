@@ -2,10 +2,10 @@ local async = require('plenary/async')
 local utils = require('utils')
 local same = assert.are.same
 
-local file = utils.get_target_file_path()
+local file = utils.get_target_file_path('main.rs')
 
-describe("diffmt.diff to rust", function ()
-  describe("with default config", function ()
+describe('diffmt.diff to rust', function ()
+  describe('with default config', function ()
     before_each(function ()
       vim.cmd(([[
         silent only
@@ -16,7 +16,7 @@ describe("diffmt.diff to rust", function ()
       utils.clear_package()
     end)
 
-    it("should open a window with the buffer with formatted content", function ()
+    it('should open a window with the buffer with formatted content', function ()
       local diff = require('diffmt/diff').diff
       async.util.block_on(async.wrap(diff, 1))
       same(#vim.api.nvim_list_wins(), 2)
