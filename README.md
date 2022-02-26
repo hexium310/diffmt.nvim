@@ -6,10 +6,10 @@ Neovim plugin that opens formatted content by formatter in diff window
 
 ## Motivation
 
-There are formatters for programming languages, and they are useful.
-However even if we want not to use some rules, most formatters such as `rustfmt` and `StyLua` doesn't have the ability to disable some of their rules.
+Formatters for programming languages are useful;
+however even if we want not to use some rules, most formatters such as `rustfmt` and `StyLua` doesn't have the ability to disable some of their rules.
 In this case, we had to reluctantly use formatter with all rules or stop use of formatter.
-This plugin opens the formatted content in diff window (`:h diff`) so that makes it easy to cherry-pick changes by formatting, e.g. apply reordering imports in rust.
+This plugin opens the formatted content in diff window (`:h diff`) so that makes it easy to cherry-pick changes by formatting, e.g. to apply reordering imports in rust.
 
 ## Installation
 
@@ -22,7 +22,7 @@ call dein#add('hexium310/diffmt.nvim')
 
 ## Usage
 
-You can use it if you don't need to customize configuration.
+You can use it as it is if you don't need to customize configuration.
 Open a target file to the buffer then execute following command:
 
 ```lua
