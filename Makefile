@@ -26,4 +26,8 @@ test: clone_dependencies
 rustfmt: clone_dependencies
 	$(call run,$@)
 
+.PHONY: stylua
+stylua: clone_dependencies
+	$(call run,$@)
+
 # vim:noexpandtab

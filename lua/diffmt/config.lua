@@ -21,6 +21,15 @@ local default_config = {
         'rust',
       },
     },
+    stylua = {
+      command = 'stylua',
+      args = {
+        '-',
+      },
+      filetypes = {
+        'lua',
+      },
+    },
   },
 }
 
