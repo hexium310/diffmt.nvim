@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  - push
+
+jobs:
+  tests:
+    name: ${{ matrix.os }} nvim-${{ matrix.nvim_version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+        nvim_version:
+          - stable
+          - nightly
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup neovim ${{ matrix.nvim_version }}
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: ${{ matrix.nvim_version }}
+      - name: Install dependencies
+        run: |
+          make clone_dependencies
+          rustup component add rustfmt
+          cargo install stylua
+      - name: Run Tests
+        run: |
+          make test
